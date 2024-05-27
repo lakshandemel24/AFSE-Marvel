@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="img/logoM.png" type="image/x-icon" />
+    <title>AFSE Marvel</title>
+    <script type="text/javascript" src="script/script_App.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <style>
+        body {
+            background: rgb(54, 0, 82);
+            background: linear-gradient(90deg, rgba(54, 0, 82, 1) 0%, rgba(22, 44, 185, 1) 50%, rgba(54, 0, 82, 1) 100%);
+        }
+
+        .cont {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 3%;
+        }
+
+        .cont_Img {
+            width: 200px;
+            height: 320px;
+            margin: 0 40px;
+            filter: brightness(70%);
+        }
+
+        .cont_Img:hover {
+            filter: brightness(1);
+            width: 240px;
+            height: 380px;
+            transition-duration: 350ms;
+            cursor: pointer;
+        }
+
+        .cont_Card {
+            width: 200px;
+            height: 320px;
+            margin: 0 40px;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+</head>
+
+<body>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+
+    <!-- NavBar -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background-color: black;">
+        <div class="container-fluid">
+
+            <a class="navbar-brand" href="home.html">
+                <img src="img/logoPage.jpg" alt="..." height="43" style="mix-blend-mode:inherit;">
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                    </li>
+                </ul>
+
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link d-sm-flex align-items-sm-center" role="button" href="negozio.html">
+                            <img src="img/cartLogo.jpg" class="rounded-circle" height="35" loading="lazy" />
+                        </a>
+                    </li>
+                </ul>
+
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link d-sm-flex align-items-sm-center dropdown-toggle" id="navbarDropdown"
+                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="img/userLogo.jpg" class="rounded-circle" height="35" loading="lazy" />
+                            <strong class="d-none d-sm-block ms-1 text-white" id="userNav"></strong>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="account.html">Account</a></li>
+                            <li><a class="dropdown-item" href="../index.html" style="color: red;"
+                                    onclick="sessionStorage.clear('loggedUser')">Esci</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Buttons & credit -->
+    <div id="subnav">
+        <div class="row" style="margin-top: 2%;margin-left: 2%;margin-right: 2%;">
+            <div class="col-4 col-xxl-1">
+                <button class="button-64" type="button" id="shop_Credit" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <span>
+                        <i class="bi bi-database-add" style="font-size: 30px;"></i>
+                    </span>
+                </button>
+            </div>
+            <div class="col-4 col-xxl-10 text-center">
+                <h3 style="color: rgb(243, 243, 243);">NEGOZIO</h3>
+            </div>
+            <div class="col-4 col-xxl-1 text-end">
+                <button type="button" id="credit_Button" title="1 credito = 1 pacchetto"
+                    style="height: 38px;width: 90px;border-radius: 15%;background-color: rgb(5, 6, 45);border: 3px solid #5B42F3;"
+                    disabled><span style="color: white;font-size: 20px;font-weight:700;" id="credit"></span><i
+                        class="bi bi-coin" style="color: white;font-size: 20px;"></i></button>
+            </div>
+        </div>
+        <div class="container text-center" style="color: rgb(243, 243, 243);;font-weight: 700;font-size: 20px;">
+            Seleziona un pacchetto e fai doppio click
+        </div>
+    </div>
+    <!-- Payment form modal-->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Compra crediti</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="container" id="payment">
+                        <div id="warning_Err" style="color: red;"></div>
+                        <form class="row g-3">
+                            <div class="text-center col-md-12">
+                                <label for="customRange2" class="form-label"><i class="bi bi-coin"
+                                        style="color: black;font-size: 28px;"></i></label>
+                                <input id="selected_Credit" type="range" class="form-range" name="amountRange" min="0" max="50" value="0"
+                                    oninput="this.form.amountInput.value=this.value" />
+                                <input type="number" name="amountInput" min="0" max="50" value="0"
+                                    oninput="this.form.amountRange.value=this.value" />
+                            </div>
+                            <hr>
+                            <div class="col-md-12">
+                                <label for="nome_Cognome" class="form-label"></label>
+                                <input type="text" class="form-control" id="nome_Cognome" placeholder="Nome e cognome">
+                            </div>
+                            <div class="col-md-12">
+                                <label for="card_numb" class="form-label"></label>
+                                <input type="text" class="form-control" id="card_numb" placeholder="Numero della carta" maxlength="16"
+                                    onkeypress="return onlyNumberKey(event)">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="exp_Date" class="form-label"></label>
+                                <input type="month" min="2023-09" value="2023-09" class="form-control" id="exp_Date">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="cvv" class="form-label"></label>
+                                <input type="text" class="form-control" id="cvv" placeholder="CVV" maxlength="3"
+                                    onkeypress="return onlyNumberKey(event)">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+                    <button type="button" class="btn btn-primary" onclick="payment_Form()">Paga</button>
+                </div>
+            </div>
+        </div>
+    </div>  
+    <!-- Card packs -->
+    <div class="container" style="color: white;">
+        <div class="cont">
+            <div class="row" id="cont_Pack">
+                <div class="col"><a><img src="img/cardPack.png" class="cont_Img" id="cont_Img_1"
+                            ondblclick="open_Pack()"></a></div>
+                <div class="col"><img src="img/cardPack.png" class="cont_Img" id="cont_Img_2" ondblclick="open_Pack()">
+                </div>
+                <div class="col"><img src="img/cardPack.png" class="cont_Img" id="cont_Img_3" ondblclick="open_Pack()">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Waiting on load -->
+    <div id="card_Load">
+    </div>
+    <!-- Cards on open pack -->
+    <div class="container" id="cont_Card">
+        <!--on open pack-->
+    </div>
+
+    <script>
+        //set the usenname in navbar
+        document.getElementById("userNav").innerHTML += sessionStorage.getItem("loggedUser");
+        //set the user credit
+        var credit = set_Credit();
+        document.getElementById("credit").innerHTML += credit + "     ";
+        //only number key
+        function onlyNumberKey(evt) {
+            // Only ASCII character in that range allowed
+            var ASCIICode = (evt.which) ? evt.which : evt.keyCode
+            if (ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57))
+                return false;
+            return true;
+        }
+    </script>
+</body>
+
+</html>

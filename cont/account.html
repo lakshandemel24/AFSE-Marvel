@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="img/logoM.png" type="image/x-icon" />
+    <title>AFSE Marvel</title>
+    <script type="text/javascript" src="script/script_App.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            background: rgb(166,0,0);
+            background: radial-gradient(circle, rgba(166,0,0,1) 0%, rgba(247,153,10,1) 14%, rgba(240,0,0,1) 91%, rgba(149,0,0,1) 100%);
+        }
+    </style>
+</head>
+
+<body>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+
+    <!-- NavBar -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background-color: black;">
+        <div class="container-fluid">
+
+            <a class="navbar-brand" href="home.html">
+                <img src="img/logoPage.jpg" alt="..." height="43" style="mix-blend-mode:inherit;">
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                    </li>
+                </ul>
+
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link d-sm-flex align-items-sm-center" role="button" href="negozio.html">
+                            <img src="img/cartLogo.jpg" class="rounded-circle" height="35" loading="lazy" />
+                        </a>
+                    </li>
+                </ul>
+
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link d-sm-flex align-items-sm-center dropdown-toggle" id="navbarDropdown"
+                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="img/userLogo.jpg" class="rounded-circle" height="35" loading="lazy" />
+                            <strong class="d-none d-sm-block ms-1 text-white" id="userNav"></strong>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="account.html">Account</a></li>
+                            <li><a class="dropdown-item" href="../index.html" style="color: red;"
+                                    onclick="sessionStorage.clear('loggedUser')">Esci</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Account overview -->
+    <div style="background-color: rgb(255, 255, 255);margin: 0 7% 0;height:100%;">
+        <div class="container-fluid">
+            <div class="row flex-nowrap">
+                <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
+                    <div
+                        class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+                        <div class="container text-center" style="height: 90px;">
+                            <i class="bi bi-person-circle" style="font-size: 50px;"></i>
+                        </div>
+                        <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start">
+                            <li class="nav-item">
+                                <a href="account.html" class="nav-link align-middle px-0">
+                                    <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Account</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="modifica.html" class="nav-link px-0 align-middle">
+                                    <i class="bi bi-pencil-square" style="font-size: 22px;"></i> <span
+                                        class="ms-1 d-none d-sm-inline">Modifica</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <hr>
+                    </div>
+                </div>
+                <div class="col py-3">
+                    <div class="container" style="margin: 3% 5% 0 0;color: black;">
+                        <h1><b>Panoramica dell'account</b></h1>
+                        <br>
+                        <h3>Profilo</h3>
+                        <div style="margin-right: 10%;">
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                        <td style="color: rgb(107, 107, 107);font-weight: bold;">Nome Utente</td>
+                                        <td id="name" style="font-weight: 500;"></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="color: rgb(107, 107, 107);font-weight: bold;">E-mail</td>
+                                        <td id="mail" style="font-weight: 500;"></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="color: rgb(107, 107, 107);font-weight: bold;">Eroe preferito</td>
+                                        <td id="fav_Hero" style="font-weight: 500;"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <br><br><br>
+                        <button type="button" class="btn btn-danger" onclick="delete_Acc()">Elimina account</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var nomeUtente = sessionStorage.getItem("loggedUser");
+        //set the usenname in navbar
+        document.getElementById("userNav").innerHTML += nomeUtente;
+        //set the usenname in table
+        document.getElementById("name").innerHTML += nomeUtente;
+        //get other info
+        var arr = read_object_from_local_storage("users");
+        for (i = 0; i < arr.length; i++) {
+            if (arr[i].nome == nomeUtente) {
+                document.getElementById("mail").innerHTML += arr[i].email;
+                document.getElementById("fav_Hero").innerHTML += arr[i].favorite_Hero;
+            }
+        }
+
+    </script>
+</body>
+
+</html>

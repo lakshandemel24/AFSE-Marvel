@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="img/logoM.png" type="image/x-icon" />
+    <title>AFSE Marvel</title>
+    <script type="text/javascript" src="script/script_App.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <style>
+        body {
+            background: rgb(64, 0, 0);
+            background: linear-gradient(90deg, rgba(64, 0, 0, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
+        }
+
+        .ms-n5 {
+            margin-left: -40px;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+
+<body>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+
+    <div class="sticky-top">
+        <!-- NavBar -->
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: black;">
+            <div class="container-fluid">
+
+                <a class="navbar-brand" href="home.html">
+                    <img src="img/logoPage.jpg" alt="..." height="43" style="mix-blend-mode:inherit;">
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                        </li>
+                    </ul>
+
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link d-sm-flex align-items-sm-center" role="button" href="negozio.html">
+                                <img src="img/cartLogo.jpg" class="rounded-circle" height="35" loading="lazy" />
+                            </a>
+                        </li>
+                    </ul>
+
+                    <ul class="navbar-nav">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link d-sm-flex align-items-sm-center dropdown-toggle" id="navbarDropdown"
+                                role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="img/userLogo.jpg" class="rounded-circle" height="35" loading="lazy" />
+                                <strong class="d-none d-sm-block ms-1 text-white" id="userNav"></strong>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="account.html">Account</a></li>
+                                <li><a class="dropdown-item" href="../index.html" style="color: red;"
+                                        onclick="sessionStorage.clear('loggedUser')">Esci</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- subNavBar -->
+        <nav class="navbar navbar-expand-lg navbar-dark"
+            style="background-color: #1a1a1a;border-top: 1px solid grey;">
+            <div class="container-fluid">
+                <a class="navbar-brand">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link" href="carte.html" style="font-weight: bold;">CARTE</a>
+                        <a class="nav-link" href="home.html" style="font-weight: bold;">ALBUM</a>
+                        <a class="nav-link active" href="scambi.html" style="font-weight: bold;">SCAMBI</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="container text-center" style="margin-top: 10px;">
+        <h3 style="color: rgb(243, 243, 243);">PIATTAFORMA DEGLI SCAMBI</h3>
+    </div>
+    <!-- New request of exchange -->
+    <!-- Button trigger modal -->
+    <br>
+    <div class="row" style="max-width: 100%;padding: 1%;">
+        <div class="col-6">
+            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                style="margin-left: 3%;font-size: 10px;color: whitesmoke;">
+                <i class="bi bi-plus-circle" style="font-size: 16px;"></i>
+                <span style="font-size: 15px;margin-left: 2px;font-weight:500;">Nuovo scambio</span>
+            </button>
+            <a href="#exg_P">
+                <button type="button" class="btn btn-success" 
+                style="margin-left: 3%;font-size: 10px;color: whitesmoke;">
+                <i class="bi bi-clock-history" style="font-size: 16px;"></i>
+                <span style="font-size: 15px;margin-left: 2px;font-weight:500;">I miei scambi</span>
+                </button>
+            </a>
+        </div>
+        <div class="col-6 text-end">
+            <button type="button" class="btn btn-warning" onclick="add_Iron_Man()"
+                style="margin-left: 3%;font-size: 15px;color: whitesmoke;">
+                Iron Man
+            </button>
+            <button type="button" class="btn btn-warning" onclick="add_Thor_Man()"
+                style="margin-left: 3%;font-size: 15px;color: whitesmoke;">
+                Thor
+            </button>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Aggiungi uno scambio</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="warning_Err" style="color: red;"></div>
+                    <div class="row">
+                        <div class="col">
+                            <select class="form-select" aria-label="Default select example" placeholder="Carte Doppie"
+                                id="select_Dobble" onchange="view_Dobble_Card()">
+                                <option selected disabled id="warning_Dobble">Carte Doppie</option>
+                            </select>
+                        </div>
+                        <div class="col" id="search_Card">
+                            <div class="input-group" id="search_Zone">
+                                <input class="form-control border-end-0 border rounded-pill" type="search" placeholder="Cerca carta" id="searched"> 
+                                <button id="searchedB" class="btn btn-outline-secondary bg-white border-bottom-0 border rounded-pill ms-n5" type="button" onclick="view_Searched_Card()">
+                                    <i class="bi bi-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col" id="dobble_Card">
+                        </div>
+                        <div class="col" id="searched_Card">
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+                    <button type="button" class="btn btn-primary" onclick="add_Exchange()">Aggiungi</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Exchange cards -->
+    <h3 style="margin-left:2%;color:white;">Scambi disponibili<h3>
+    <div id="exchanges_List">
+        <!-- dinamically loaded -->
+    </div>
+
+    <script>
+        //set the usenname in navbar
+        document.getElementById("userNav").innerHTML += sessionStorage.getItem("loggedUser")
+        //dobble cards
+        var cards = load_Dobbles();
+        //new exchange cards
+        var dobble_Card_To_Exchange = {};
+        var new_Card_To_Exchange = {};
+        //load exchanges
+        load_Exchanges();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="img/logoM.png" type="image/x-icon" />
+    <title>Sign Up</title>
+    <script type="text/javascript" src="script/script_Access.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        body {
+            background-image: url(img/bglog.png);
+            background-size: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+
+    <!-- NavBar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black sticky-top">
+        <div class="container-fluid">
+
+            <a class="navbar-brand" href="../index.html">
+                <img src="img/logoPage.jpg" alt="..." height="45">
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                </ul>
+                <!-- Sign Up/Log In buttons -->
+                <div>
+                    <a class="button parallelogram" href="signUp.html">
+                        <span class="skew-fix" style="color: white;"><b>SIGN UP NOW</b></span> </a>
+                    <a class="button2 parallelogram" href="logIn.html">
+                        <span class="skew-fix" style="color: white;"><b>LOG IN</b></span> </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Form Sign Up -->
+    <div class="container" style="height: fit-content;display:flex;align-items:center;justify-content:center;margin-top: 10%;border-radius: 5%;background-color: rgb(209, 209, 209);max-width: 600px;padding: 1%;">
+        <div class="row" style="width: 700px;">
+            <div class="col-6">
+                <div class="container">
+                    <h3>SUPER HERO</h3>
+                    <div id="warningErrore_Hero" style="color: red;"></div>
+                    <div class="mb-3">
+                        <div class="d-flex">
+                            <input class="form-control me-2" type="text" placeholder="Cerca il tuo preferito" aria-label="Search"
+                                id="searched_SuperHero">
+                            <button class="btn btn-outline-dark" onclick="search_SuperHero()"><i class="bi bi-search"></i></button>
+                        </div>
+                        <div id="cards_Cont">
+                            <!--dynamically loaded-->
+                        </div>  
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="container ">
+                    <h3>SIGN-UP</h3>
+                    <div id="warningErrore" style="color: red;"></div>
+                    <form id="formSignUp" method="GET" action="home.html" onsubmit="return check_SignUp()">
+                        <div class="mb-3">
+                            <label for="nomeUtente" class="form-group">Scegli un nome utente</label>
+                            <input type="text" class="form-control" id="nomeUtente" required placeholder="User12">
+                        </div>
+                        <div class="mb-3">
+                            <label for="emailUtente" class="form-group">Email</label>
+                            <input type="email" class="form-control" id="emailUtente" required placeholder="user@mail.com">
+                        </div>
+                        <div class="mb-3">
+                            <label for="passwordUtente" class="form-group">Password</label>
+                            <input type="password" class="form-control" id="passwordUtente" required placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;">
+                            <input type="checkbox" onclick="toggle_Password()"> Mostra password
+                        </div>
+                        <button type="submit" class="btn btn-danger">Registrami</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var fav_Hero_Name = "";
+    </script>
+    
+
+</body>
+
+</html>
